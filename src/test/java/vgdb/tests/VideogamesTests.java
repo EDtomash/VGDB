@@ -81,6 +81,7 @@ public class VideogamesTests {
         Response response = VideogameApi.postVideogame(zeldaGame);
 
         SuccessfulOperationModel successMessage = response.as(SuccessfulOperationModel.class);
+        assertThat(successMessage.getStatus(), equalTo("Record Added Successfully"));
         assertThat(response.statusCode(), is(200));
 
         Response updatedResponse = VideogameApi.updateVideogame(marioGame, zeldaGameId);
