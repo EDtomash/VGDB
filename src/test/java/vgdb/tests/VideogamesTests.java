@@ -85,7 +85,6 @@ public class VideogamesTests {
         assertThat(response.statusCode(), is(200));
 
         Response updatedResponse = VideogameApi.updateVideogame(marioGame, zeldaGameId);
-
         assertThat(updatedResponse.statusCode(), equalTo(200));
         assertThat(updatedResponse.path("id"), equalTo(zeldaGameId));
         assertThat(updatedResponse.path("name"), equalTo(marioGame.getName()));
